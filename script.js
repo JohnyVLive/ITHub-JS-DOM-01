@@ -44,13 +44,11 @@ function addCell(row){
 
 function addNumber(){
     let table = document.getElementById("table")
-    let rows = table.rows.length
-    let cells = table.rows[rows - 1].cells.length
-    if (cells < 6){
-        let row = table.rows[rows - 1]
+    let row = table.querySelector("tr:last-child")
+    if (row.cells.length < CELLS){
         addCell(row)
     } else {
-        let row = table.insertRow()
+        row = table.insertRow()
         addCell(row)
     }
 }
